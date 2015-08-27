@@ -11,16 +11,25 @@ h4={a: 1, b: 2, c: {x: {state: 'TX', country: 'USA'}, y: 20}, d: 4, e: {f: {g: {
 
 ##here i am defining the method "recur", so when value is again hash it has to go to the method untill to get a value 
 ##if "x" is a value it will be printed in else condition , so we will only values
+$a=Array.new
+
+##here i am defining the method "recur", so when value is again hash it has to go to the method untill to get a value 
+##if "x" is a value it will be printed in else condition , so we will only values
+
 def recur(h)
+	 
 	h.values.each do |x|
 		if x.class==Hash
 			recur(x)
 		else 
-			puts x
+			$a << x
 		end	
 	end
+   
+$a
 
 end
 
-recur(h4)
+ p recur(h2)
+ 
 
